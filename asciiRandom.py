@@ -9,3 +9,7 @@ for data in range(5):
     print('Random number is ' + str(randomNum))
     print('My character is ' + str(data))
     time.sleep(1)
+
+
+
+
