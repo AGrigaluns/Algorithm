@@ -2,6 +2,8 @@ import pygame
 import random
 from pygame.math import Vector2
 
+# todo make start game page
+
 class SNAKE:
     def __init__(self):
         self.body = [Vector2(5,10),Vector2(6,10),Vector2(7,10)]
@@ -16,7 +18,7 @@ class SNAKE:
             block_rect = pygame.Rect(x_pos,y_pos,cell_size, cell_size)
 
             #draw rectangle
-            pygame.draw.rect(screen,(183,111,122),block_rect)
+            pygame.draw.rect(screen,(183,150,185),block_rect)
 
     def move_snake(self):
         if self.new_block == True:
@@ -93,7 +95,7 @@ screen = pygame.display.set_mode((cell_num * cell_size,cell_num * cell_size))
 done = False
 
 SCREEN_UPDATE = pygame.USEREVENT
-pygame.time.set_timer(SCREEN_UPDATE,150)
+pygame.time.set_timer(SCREEN_UPDATE,100)
 
 main_game = MAIN()
 
@@ -105,6 +107,7 @@ while not done:
         # for moving snake
         if event.type == SCREEN_UPDATE:
             main_game.update()
+            # TODO # MAKE STATEMENT FOR SNAKE TO NOT BITE IT SELF
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 main_game.snake.direction = Vector2(0,-1)
