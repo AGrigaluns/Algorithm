@@ -23,7 +23,7 @@ class SNAKE:
             body_copy = self.body[:]
             body_copy.insert(0,body_copy[0] + self.direction)
             self.body = body_copy[:]
-            self.new_block == False
+            self.new_block = False
         else:
             body_copy = self.body[:-1]
             body_copy.insert(0,body_copy[0] + self.direction)
