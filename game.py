@@ -97,7 +97,6 @@ pygame.time.set_timer(SCREEN_UPDATE,150)
 
 main_game = MAIN()
 
-# loop pygame GUI to keep open
 while not done:
     for event in pygame.event.get():
         # for pygame to stay open
