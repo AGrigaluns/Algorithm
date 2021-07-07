@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS albums;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `albums`
 
 (
@@ -709,7 +709,7 @@ INSERT INTO albums VALUES(346,'Mozart: Chamber Music',274);
 
 INSERT INTO albums VALUES(347,'Koyaanisqatsi (Soundtrack from the Motion Picture)',275);
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS artists;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `artists`
 
 (
@@ -1270,7 +1270,7 @@ INSERT INTO artists VALUES(274,'Nash Ensemble');
 
 INSERT INTO artists VALUES(275,'Philip Glass Ensemble');
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS customers;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `customers`
 
 (
@@ -1425,7 +1425,7 @@ INSERT INTO customers VALUES(58,'Manoj','Pareek',NULL,'12,Community Centre','Del
 
 INSERT INTO customers VALUES(59,'Puja','Srivastava',NULL,'3,Raj Bhavan Road','Bangalore',NULL,'India','560001','+91 080 22289999',NULL,'puja_srivastava@yahoo.in',3);
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS employees;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `employees`
 
 (
@@ -1482,7 +1482,7 @@ INSERT INTO employees VALUES(7,'King','Robert','IT Staff',6,'1970-05-29 00:00:00
 
 INSERT INTO employees VALUES(8,'Callahan','Laura','IT Staff',6,'1968-01-09 00:00:00','2004-03-04 00:00:00','923 7 ST NW','Lethbridge','AB','Canada','T1H 1Y8','+1 (403) 467-3351','+1 (403) 467-8772','laura@chinookcorp.com');
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS genres;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `genres`
 
 (
@@ -1543,7 +1543,7 @@ INSERT INTO genres VALUES(24,'Classical');
 
 INSERT INTO genres VALUES(25,'Opera');
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS invoices;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `invoices`
 
 (
@@ -2396,7 +2396,7 @@ INSERT INTO invoices VALUES(411,44,'2013-12-14 00:00:00','Porthaninkatu 9','Hels
 
 INSERT INTO invoices VALUES(412,58,'2013-12-22 00:00:00','12,Community Centre','Delhi',NULL,'India','110017',1.9899999999999999911);
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS invoice_items;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `invoice_items`
 
 (
@@ -6901,7 +6901,7 @@ INSERT INTO invoice_items VALUES(2239,411,3163,0.98999999999999999111,1);
 
 INSERT INTO invoice_items VALUES(2240,412,3177,1.9899999999999999911,1);
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS media_types;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `media_types`
 
 (
@@ -6922,7 +6922,7 @@ INSERT INTO media_types VALUES(4,'Purchased AAC audio file');
 
 INSERT INTO media_types VALUES(5,'AAC audio file');
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS playlists;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `playlists`
 
 (
@@ -6969,7 +6969,7 @@ INSERT INTO playlists VALUES(17,'Heavy Metal Classic');
 
 INSERT INTO playlists VALUES(18,'On-The-Go 1');
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS playlist_track;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `playlist_track`
 
 (
@@ -24420,7 +24420,7 @@ INSERT INTO playlist_track VALUES(17,3290);
 
 INSERT INTO playlist_track VALUES(18,597);
 
-DROP TABLE IF EXISTS IF;
+DROP TABLE IF EXISTS tracks;
 CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `tracks`
 
 (

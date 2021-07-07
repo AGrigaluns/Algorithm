@@ -4,7 +4,7 @@ db = mysql.connect(
     host="localhost",
     user="root",
     database="musicshop",
-    passwd="**********!"
+    passwd="**********"
 )
 
 print(db)
