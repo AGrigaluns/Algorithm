@@ -1,0 +1,4 @@
+
+# ignore credentials
+/user_crud/user.txt
+/user_crud/password.txt
