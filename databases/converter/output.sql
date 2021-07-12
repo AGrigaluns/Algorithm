@@ -1,15 +1,15 @@
 DROP TABLE IF EXISTS albums;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `albums`
+CREATE TABLE IF NOT EXISTS `albums`
 
 (
 
-    [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    AlbumId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [Title] NVARCHAR(160)  NOT NULL,
+    Title NVARCHAR(160)  NOT NULL,
 
-    [ArtistId] INTEGER  NOT NULL,
+    ArtistId INTEGER  NOT NULL,
 
-    FOREIGN KEY ([ArtistId]) REFERENCES `artists` ([ArtistId]) 
+    FOREIGN KEY (ArtistId) REFERENCES `artists` (ArtistId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 
@@ -1270,38 +1270,38 @@ INSERT INTO artists VALUES(274,'Nash Ensemble');
 
 INSERT INTO artists VALUES(275,'Philip Glass Ensemble');
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `customers`
+DROP TABLE IF EXISTS customers;
+CREATE TABLE IF NOT EXISTS `customers`
 
 (
 
-    [CustomerId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    CustomerId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [FirstName] NVARCHAR(40)  NOT NULL,
+    FirstName NVARCHAR(40)  NOT NULL,
 
-    [LastName] NVARCHAR(20)  NOT NULL,
+    LastName NVARCHAR(20)  NOT NULL,
 
-    [Company] NVARCHAR(80),
+    Company NVARCHAR(80),
 
-    [Address] NVARCHAR(70),
+    Address NVARCHAR(70),
 
-    [City] NVARCHAR(40),
+    City NVARCHAR(40),
 
-    [State] NVARCHAR(40),
+    State NVARCHAR(40),
 
-    [Country] NVARCHAR(40),
+    Country NVARCHAR(40),
 
-    [PostalCode] NVARCHAR(10),
+    PostalCode NVARCHAR(10),
 
-    [Phone] NVARCHAR(24),
+    Phone NVARCHAR(24),
 
-    [Fax] NVARCHAR(24),
+    Fax NVARCHAR(24),
 
-    [Email] NVARCHAR(60)  NOT NULL,
+    Email NVARCHAR(60)  NOT NULL,
 
-    [SupportRepId] INTEGER,
+    SupportRepId INTEGER,
 
-    FOREIGN KEY ([SupportRepId]) REFERENCES `employees` ([EmployeeId]) 
+    FOREIGN KEY (SupportRepId) REFERENCES `employees` (EmployeeId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 
@@ -1425,42 +1425,42 @@ INSERT INTO customers VALUES(58,'Manoj','Pareek',NULL,'12,Community Centre','Del
 
 INSERT INTO customers VALUES(59,'Puja','Srivastava',NULL,'3,Raj Bhavan Road','Bangalore',NULL,'India','560001','+91 080 22289999',NULL,'puja_srivastava@yahoo.in',3);
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `employees`
+DROP TABLE IF EXISTS employees;
+CREATE TABLE IF NOT EXISTS `employees`
 
 (
 
-    [EmployeeId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    EmployeeId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [LastName] NVARCHAR(20)  NOT NULL,
+    LastName NVARCHAR(20)  NOT NULL,
 
-    [FirstName] NVARCHAR(20)  NOT NULL,
+    FirstName NVARCHAR(20)  NOT NULL,
 
-    [Title] NVARCHAR(30),
+    Title NVARCHAR(30),
 
-    [ReportsTo] INTEGER,
+    ReportsTo INTEGER,
 
-    [BirthDate] DATETIME,
+    BirthDate DATETIME,
 
-    [HireDate] DATETIME,
+    HireDate DATETIME,
 
-    [Address] NVARCHAR(70),
+    Address NVARCHAR(70),
 
-    [City] NVARCHAR(40),
+    City NVARCHAR(40),
 
-    [State] NVARCHAR(40),
+    State NVARCHAR(40),
 
-    [Country] NVARCHAR(40),
+    Country NVARCHAR(40),
 
-    [PostalCode] NVARCHAR(10),
+    PostalCode NVARCHAR(10),
 
-    [Phone] NVARCHAR(24),
+    Phone NVARCHAR(24),
 
-    [Fax] NVARCHAR(24),
+    Fax NVARCHAR(24),
 
-    [Email] NVARCHAR(60),
+    Email NVARCHAR(60),
 
-    FOREIGN KEY ([ReportsTo]) REFERENCES `employees` ([EmployeeId]) 
+    FOREIGN KEY (ReportsTo) REFERENCES `employees` (EmployeeId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 
@@ -1482,14 +1482,14 @@ INSERT INTO employees VALUES(7,'King','Robert','IT Staff',6,'1970-05-29 00:00:00
 
 INSERT INTO employees VALUES(8,'Callahan','Laura','IT Staff',6,'1968-01-09 00:00:00','2004-03-04 00:00:00','923 7 ST NW','Lethbridge','AB','Canada','T1H 1Y8','+1 (403) 467-3351','+1 (403) 467-8772','laura@chinookcorp.com');
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `genres`
+DROP TABLE IF EXISTS genres;
+CREATE TABLE IF NOT EXISTS `genres`
 
 (
 
-    [GenreId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    GenreId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [Name] NVARCHAR(120)
+    Name NVARCHAR(120)
 
 );
 
@@ -1543,30 +1543,30 @@ INSERT INTO genres VALUES(24,'Classical');
 
 INSERT INTO genres VALUES(25,'Opera');
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `invoices`
+DROP TABLE IF EXISTS invoices;
+CREATE TABLE IF NOT EXISTS `invoices`
 
 (
 
-    [InvoiceId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    InvoiceId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 
-    [CustomerId] INTEGER  NOT NULL,
+    CustomerId INTEGER  NOT NULL,
 
-    [InvoiceDate] DATETIME  NOT NULL,
+    InvoiceDate DATETIME  NOT NULL,
 
-    [BillingAddress] NVARCHAR(70),
+    BillingAddress NVARCHAR(70),
 
-    [BillingCity] NVARCHAR(40),
+    BillingCity NVARCHAR(40),
 
-    [BillingState] NVARCHAR(40),
+    BillingState NVARCHAR(40),
 
-    [BillingCountry] NVARCHAR(40),
+    BillingCountry NVARCHAR(40),
 
-    [BillingPostalCode] NVARCHAR(10),
+    BillingPostalCode NVARCHAR(10),
 
-    [Total] NUMERIC(10,2)  NOT NULL,
+    Total NUMERIC(10,2)  NOT NULL,
 
-    FOREIGN KEY ([CustomerId]) REFERENCES `customers` ([CustomerId]) 
+    FOREIGN KEY (CustomerId) REFERENCES `customers` (CustomerId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 
@@ -2396,26 +2396,26 @@ INSERT INTO invoices VALUES(411,44,'2013-12-14 00:00:00','Porthaninkatu 9','Hels
 
 INSERT INTO invoices VALUES(412,58,'2013-12-22 00:00:00','12,Community Centre','Delhi',NULL,'India','110017',1.9899999999999999911);
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `invoice_items`
+DROP TABLE IF EXISTS invoice_items;
+CREATE TABLE IF NOT EXISTS `invoice_items`
 
 (
 
-    [InvoiceLineId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    InvoiceLineId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [InvoiceId] INTEGER  NOT NULL,
+    InvoiceId INTEGER  NOT NULL,
 
-    [TrackId] INTEGER  NOT NULL,
+    TrackId INTEGER  NOT NULL,
 
-    [UnitPrice] NUMERIC(10,2)  NOT NULL,
+    UnitPrice NUMERIC(10,2)  NOT NULL,
 
-    [Quantity] INTEGER  NOT NULL,
+    Quantity INTEGER  NOT NULL,
 
-    FOREIGN KEY ([InvoiceId]) REFERENCES `invoices` ([InvoiceId]) 
+    FOREIGN KEY (InvoiceId) REFERENCES `invoices` (InvoiceId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION,
 
-    FOREIGN KEY ([TrackId]) REFERENCES `tracks` ([TrackId]) 
+    FOREIGN KEY (TrackId) REFERENCES `tracks` (TrackId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 
@@ -6901,14 +6901,14 @@ INSERT INTO invoice_items VALUES(2239,411,3163,0.98999999999999999111,1);
 
 INSERT INTO invoice_items VALUES(2240,412,3177,1.9899999999999999911,1);
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `media_types`
+DROP TABLE IF EXISTS media_types;
+CREATE TABLE IF NOT EXISTS `media_types`
 
 (
 
-    [MediaTypeId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    MediaTypeId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [Name] NVARCHAR(120)
+    Name NVARCHAR(120)
 
 );
 
@@ -6922,14 +6922,14 @@ INSERT INTO media_types VALUES(4,'Purchased AAC audio file');
 
 INSERT INTO media_types VALUES(5,'AAC audio file');
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `playlists`
+DROP TABLE IF EXISTS playlists;
+CREATE TABLE IF NOT EXISTS `playlists`
 
 (
 
-    [PlaylistId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    PlaylistId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [Name] NVARCHAR(120)
+    Name NVARCHAR(120)
 
 );
 
@@ -6969,22 +6969,22 @@ INSERT INTO playlists VALUES(17,'Heavy Metal Classic');
 
 INSERT INTO playlists VALUES(18,'On-The-Go 1');
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `playlist_track`
+DROP TABLE IF EXISTS playlist_track;
+CREATE TABLE IF NOT EXISTS `playlist_track`
 
 (
 
-    [PlaylistId] INTEGER  NOT NULL,
+    PlaylistId INTEGER  NOT NULL,
 
-    [TrackId] INTEGER  NOT NULL,
+    TrackId INTEGER  NOT NULL,
 
-    CONSTRAINT [PK_PlaylistTrack] PRIMARY KEY  ([PlaylistId], [TrackId]),
+    CONSTRAINT PK_PlaylistTrack PRIMARY KEY  (PlaylistId, TrackId),
 
-    FOREIGN KEY ([PlaylistId]) REFERENCES `playlists` ([PlaylistId]) 
+    FOREIGN KEY (PlaylistId) REFERENCES `playlists` (PlaylistId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION,
 
-    FOREIGN KEY ([TrackId]) REFERENCES `tracks` ([TrackId]) 
+    FOREIGN KEY (TrackId) REFERENCES `tracks` (TrackId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 
@@ -24420,38 +24420,38 @@ INSERT INTO playlist_track VALUES(17,3290);
 
 INSERT INTO playlist_track VALUES(18,597);
 
-DROP TABLE IF EXISTS IF;
-CREATE TABLE IF NOT EXISTS `IF` NOT EXISTS `tracks`
+DROP TABLE IF EXISTS tracks;
+CREATE TABLE IF NOT EXISTS `tracks`
 
 (
 
-    [TrackId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    TrackId INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
 
-    [Name] NVARCHAR(200)  NOT NULL,
+    Name NVARCHAR(200)  NOT NULL,
 
-    [AlbumId] INTEGER,
+    AlbumId INTEGER,
 
-    [MediaTypeId] INTEGER  NOT NULL,
+    MediaTypeId INTEGER  NOT NULL,
 
-    [GenreId] INTEGER,
+    GenreId INTEGER,
 
-    [Composer] NVARCHAR(220),
+    Composer NVARCHAR(220),
 
-    [Milliseconds] INTEGER  NOT NULL,
+    Milliseconds INTEGER  NOT NULL,
 
-    [Bytes] INTEGER,
+    Bytes INTEGER,
 
-    [UnitPrice] NUMERIC(10,2)  NOT NULL,
+    UnitPrice NUMERIC(10,2)  NOT NULL,
 
-    FOREIGN KEY ([AlbumId]) REFERENCES `albums` ([AlbumId]) 
-
-		ON DELETE NO ACTION ON UPDATE NO ACTION,
-
-    FOREIGN KEY ([GenreId]) REFERENCES `genres` ([GenreId]) 
+    FOREIGN KEY (AlbumId) REFERENCES `albums` (AlbumId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION,
 
-    FOREIGN KEY ([MediaTypeId]) REFERENCES `media_types` ([MediaTypeId]) 
+    FOREIGN KEY (GenreId) REFERENCES `genres` (GenreId) 
+
+		ON DELETE NO ACTION ON UPDATE NO ACTION,
+
+    FOREIGN KEY (MediaTypeId) REFERENCES `media_types` (MediaTypeId) 
 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
 
@@ -31501,23 +31501,23 @@ CREATE TABLE IF NOT EXISTS `gear` (name TEXT, series TEXT, product_number INTEGE
 DROP TABLE IF EXISTS synths;
 CREATE TABLE IF NOT EXISTS `synths` (name TEXT, series TEXT, product_number INTEGER);
 
-CREATE INDEX [IFK_AlbumArtistId] ON `albums` ([ArtistId]);
+CREATE INDEX IFK_AlbumArtistId ON `albums` (ArtistId);
 
-CREATE INDEX [IFK_CustomerSupportRepId] ON `customers` ([SupportRepId]);
+CREATE INDEX IFK_CustomerSupportRepId ON `customers` (SupportRepId);
 
-CREATE INDEX [IFK_EmployeeReportsTo] ON `employees` ([ReportsTo]);
+CREATE INDEX IFK_EmployeeReportsTo ON `employees` (ReportsTo);
 
-CREATE INDEX [IFK_InvoiceCustomerId] ON `invoices` ([CustomerId]);
+CREATE INDEX IFK_InvoiceCustomerId ON `invoices` (CustomerId);
 
-CREATE INDEX [IFK_InvoiceLineInvoiceId] ON `invoice_items` ([InvoiceId]);
+CREATE INDEX IFK_InvoiceLineInvoiceId ON `invoice_items` (InvoiceId);
 
-CREATE INDEX [IFK_InvoiceLineTrackId] ON `invoice_items` ([TrackId]);
+CREATE INDEX IFK_InvoiceLineTrackId ON `invoice_items` (TrackId);
 
-CREATE INDEX [IFK_PlaylistTrackTrackId] ON `playlist_track` ([TrackId]);
+CREATE INDEX IFK_PlaylistTrackTrackId ON `playlist_track` (TrackId);
 
-CREATE INDEX [IFK_TrackAlbumId] ON `tracks` ([AlbumId]);
+CREATE INDEX IFK_TrackAlbumId ON `tracks` (AlbumId);
 
-CREATE INDEX [IFK_TrackGenreId] ON `tracks` ([GenreId]);
+CREATE INDEX IFK_TrackGenreId ON `tracks` (GenreId);
 
-CREATE INDEX [IFK_TrackMediaTypeId] ON `tracks` ([MediaTypeId]);
+CREATE INDEX IFK_TrackMediaTypeId ON `tracks` (MediaTypeId);
 

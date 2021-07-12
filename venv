@@ -1,0 +1,8 @@
+ 
+create virtual env ->  python3 -m venv <venv name>
+
+start venv - go in to venv dir and do ->    . <venv name>/bin/activate
+
+Set the FLASK_APP environment variable. ->  export FLASK_APP=your_file.py
+
+start local flask server ->  flask run
