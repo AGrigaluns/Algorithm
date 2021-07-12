@@ -69,41 +69,36 @@ def get_invoices(id, year, month):
     return make_response(jsonify(json_data), 200)
 
 
-@app.route("/create_artist/<int:id>/<string:name>", methods=['POST'])
-def create_artist(id, name):
+@app.route("/create_artist/<string:artist_name>", methods=['POST'])
+def create_artist(artist_name):
     db = MySQLdb.connect("localhost", user, password, "musicshop")
     cur = db.cursor()
-    query = "INSERT INTO artists VALUES ArtistId=" + str(id), "Name=" + str(name)
-    cur.execute(query)
-    json_data = cur.fetchall()
-    cur.close()
-    print("json_data (creare_artist):")
-    print(json_data)
-    return jsonify(data=json_data)
+    proc = "create_artist"
+    cur.callproc(proc,[artist_name])
+    response = {'data': f'["Name": "{artist_name}"]'}
+    return make_response(jsonify(response), 200)
 
 
-@app.route("/delete_types/<int:id>", methods=['DELETE'])
-def delete_types(id):
+@app.route("/delete_artist/<int:id>", methods=['DELETE'])
+def delete_artist(id):
     db = MySQLdb.connect("localhost", user, password, "musicshop")
     cur = db.cursor()
-    query = "DELETE FROM media_types WHERE MediaTypeId=" + str(id)
-    cur.execute(query)
-    json_data = cur.fetchall()
-    cur.close()
-    print("json_data (delete_types):")
-    print(json_data)
-    return jsonify(data=json_data)
+    proc = "delete_artist"
+    results = cur.callproc(proc,[id])
+    # cur.commit()
+    print(results)
+    response = {'data': f'["Deleted": "{id}"]'}
+    return make_response(jsonify(response), 200)
 
 
-@app.route("/add_types/<int:id>/<string:name>", methods=['PUT'])
-def update_genres(id, name):
+@app.route("/update_artist/<int:id>/<string:new_artist_name>", methods=['PUT'])
+def update_artist_by_id(id, new_artist_name):
     db = MySQLdb.connect("localhost", user, password, "musicshop")
     cur = db.cursor()
-    query = "UPDATE genres SET Name=" + str(name), "WHERE GenreId=" + str(id)
-    cur.execute(query)
-    json_data = cur.fetchall()
-    cur.close()
-    print("json_data (update_genres):")
-    print(json_data)
-    return jsonify(data=json_data)
+    proc = "update_artist"
+    results = cur.callproc(proc,[id, new_artist_name])
+    print(results)
+
+    response = {'data': f'["Name": "{new_artist_name}"]'}
+    return make_response(jsonify(response), 200)
 

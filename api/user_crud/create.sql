@@ -1,0 +1,8 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `create_artist`(IN ARTIST_NAME TEXT)
+BEGIN
+INSERT INTO artists (Name)
+VALUE (ARTIST_NAME);
+commit;
+END$$
+DELIMITER ;
