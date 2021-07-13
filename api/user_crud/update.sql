@@ -1,9 +1,0 @@
-ELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_artist_by_id`(IN ARTIST_ID INT, IN NEW_ARTIST_NAME TEXT)
-BEGIN
-   UPDATE artists
-   SET Name = NEW_ARTIST_NAME
-   WHERE ArtistId = ARTIST_ID LIMIT 1;
-   commit;
-END$$
-DELIMITER ;
