@@ -1,0 +1,20 @@
+<table class="countDownContainer">
+  <tr class="info">
+    <td colspan="4">World End Countdown</td>
+  </tr>
+  <ng-container *ngIf="getCountDown(1)|async as time">
+  <tr class="info">
+    <td id="days">{{ time.days }}</td>
+    <td id="hours">{{ time.hours }}</td>
+    <td id="minutes">{{ time.minutes }}</td>
+    <td id="seconds">{{ time.seconds }}</td>
+  </tr>
+  </ng-container>
+  <tr class="info">
+    <td>d</td>
+    <td>h</td>
+    <td>m</td>
+    <td>s</td>
+  </tr>
+</table>
+
