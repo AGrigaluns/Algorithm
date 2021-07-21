@@ -1,0 +1,22 @@
+<ng-container *ngIf="weatherNow.latitude<=0 && weatherNow.longitude<=0">
+  ¯\_(ツ)_/¯
+</ng-container>
+
+<ng-container *ngIf="weatherNow.latitude>0 && weatherNow.longitude>0">
+  hello, tu atrodies te: {{weatherNow.longitude}} {{weatherNow.latitude}}
+  un laičiīņš tagad ir tāds:
+  <ul>
+    <li>Tempačā: {{weatherNow.temperature}}'C</li>
+    <li>Vēš: {{weatherNow.wind}}</li>
+    <li>Vēš no: {{weatherNow.windDirection}}</li>
+  </ul>
+  <hr>
+  <app-time-temperature-slot
+    *ngFor="let weather of vissWeath"
+    [weather]="weather"
+    (click)="openWeather(weather)"
+    [class.auksts]="weather.data.instant.details.air_temperature<20"
+    [class.karsts]="weather.data.instant.details.air_temperature>=22"
+  >
+  </app-time-temperature-slot>
+</ng-container>
